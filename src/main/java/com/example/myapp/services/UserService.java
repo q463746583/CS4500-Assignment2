@@ -25,11 +25,11 @@ public class UserService {
     @GetMapping("/api/user/{userId}")
     public User findUserById(
             @PathVariable("userId") Integer id) {
+        System.out.println(id);
         for (User user : users) {
-            if (user.getId() == id) {
+            if (user.getId().equals(id)) {
                 return user;
             }
-            return null;
         }
         return null;
     }
